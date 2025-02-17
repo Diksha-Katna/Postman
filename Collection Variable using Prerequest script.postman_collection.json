@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "e9c4243e-ad42-4534-b159-932385e06a7e",
+		"name": "Collection Variable using Prerequest script",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40633577"
+	},
+	"item": [
+		{
+			"name": "Get a Single object",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{New-url}}/objects/7",
+					"host": [
+						"{{New-url}}"
+					],
+					"path": [
+						"objects",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All objects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{New-url}}/objects",
+					"host": [
+						"{{New-url}}"
+					],
+					"path": [
+						"objects"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"postman.setGlobalVariable(\"New-url\",\"https://api.restful-api.dev\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
