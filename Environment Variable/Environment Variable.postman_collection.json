@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "2c4e50af-7abf-4746-8bd1-b16cd09d15f1",
+		"name": "Environment Variable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40633577"
+	},
+	"item": [
+		{
+			"name": "To get page data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page={{page}}",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{page}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
