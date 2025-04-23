@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "039ee42b-f38a-43a7-9b55-0a08086a36db",
+		"name": "Postman Scripting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40633577"
+	},
+	"item": [
+		{
+			"name": "Get User Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"lindsay.ferguson@reqres.in\");\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data[0].id).to.eql(7);\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"page\": 2,\r",
+							"    \"per_page\": 6,\r",
+							"    \"total\": 12,\r",
+							"    \"total_pages\": 2,\r",
+							"    \"data\": [\r",
+							"        {\r",
+							"            \"id\": 7,\r",
+							"            \"email\": \"michael.lawson@reqres.in\",\r",
+							"            \"first_name\": \"Michael\",\r",
+							"            \"last_name\": \"Lawson\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/7-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 8,\r",
+							"            \"email\": \"lindsay.ferguson@reqres.in\",\r",
+							"            \"first_name\": \"Lindsay\",\r",
+							"            \"last_name\": \"Ferguson\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/8-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 9,\r",
+							"            \"email\": \"tobias.funke@reqres.in\",\r",
+							"            \"first_name\": \"Tobias\",\r",
+							"            \"last_name\": \"Funke\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/9-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 10,\r",
+							"            \"email\": \"byron.fields@reqres.in\",\r",
+							"            \"first_name\": \"Byron\",\r",
+							"            \"last_name\": \"Fields\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/10-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 11,\r",
+							"            \"email\": \"george.edwards@reqres.in\",\r",
+							"            \"first_name\": \"George\",\r",
+							"            \"last_name\": \"Edwards\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/11-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 12,\r",
+							"            \"email\": \"rachel.howell@reqres.in\",\r",
+							"            \"first_name\": \"Rachel\",\r",
+							"            \"last_name\": \"Howell\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/12-image.jpg\"\r",
+							"        }\r",
+							"    ],\r",
+							"    \"support\": {\r",
+							"        \"url\": \"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral\",\r",
+							"        \"text\": \"Tired of writing endless social media content? Let Content Caddy generate it for you.\"\r",
+							"    }\r",
+							"});\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
